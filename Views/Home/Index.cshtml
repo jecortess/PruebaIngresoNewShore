@@ -1,8 +1,118 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model SearchFlightModel
+@using PruebaIngresoNewShore.Shared.Entities
+
+@{
+    ViewData["Title"] = "Buscar vuelo";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="card">
+    <div class="card-body">
+        <div class="col-12">
+            <h3>@ViewData["Title"]</h3>
+        </div>
+        <hr />
+        @if (Model.VerError)
+        {
+            <div id="alert" class="@Model.TipoError" role="alert">
+                @Model.MensajeError
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+        @using (@Html.BeginForm(FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-4">
+                    <div class="form-group ">
+                        @Html.LabelFor(p => p.Origin)
+                        @Html.DropDownListFor(p => p.Origin, Model.RoutesList, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(p => p.Origin, "", new { @class = "mensaje-error" })
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.Destination)
+                        @Html.DropDownListFor(p => p.Destination, Model.RoutesList, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(p => p.Destination, "", new { @class = "mensaje-error" })
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-group">
+                        @Html.LabelFor(p => p.From)
+                        @Html.TextBoxFor(p => p.From, new { @class = "form-control", id = "fechaSearch", @readonly = "readonly" })
+                        @Html.ValidationMessageFor(p => p.From, "", new { @class = "mensaje-error" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary">Buscar Vuelos</button>
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+        }
+    </div>
 </div>
+<br />
+@if (Model.FlightsList.Count > 0)
+{    <div class="card">
+         <div class="card-body">
+             <div class="col-12">
+                 <h3>Vuelos Disponibles</h3>
+             </div>
+             <hr />
+             <table id="tableFlightsList" class="display nowrap dataTable dtr-inline collapsed" data-page-length='25'>
+                 <thead>
+                     <tr>
+                         <th>Origen</th>
+                         <th>Destino</th>
+                         <th>Fecha</th>
+                         <th class="no-sort">Acciones</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     @foreach (Flight item in Model.FlightsList)
+                     {
+                         <tr>
+                             <td>@Model.Origin</td>
+                             <td>@Model.Destination</td>
+                             <td>@item.DepartureDate</td>
+                             <td>@Html.ActionLink("Continuar", "Insert", new { idFligth = item.PK_IdFligth })</td>
+                         </tr>
+                     }
+                 </tbody>
+             </table>
+         </div>
+    </div>
+}
+
+
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            $("#fechaSearch").datepicker({
+                dateFormat: "yy-mm-dd",
+                minDate: new Date(),
+                setDate: new Date()
+            });
+        });
+        var showAlert = '@Model.VerError';
+        if (showAlert === 'True') {
+            setTimeout(function () { $(".close").click(); }, 8000);
+        }
+        $('#tableFlightsList').DataTable({
+            "columnDefs": [{
+                "targets": [3],
+                "orderable": false,
+            }],
+            searching: false
+        });
+    </script>
+}
+

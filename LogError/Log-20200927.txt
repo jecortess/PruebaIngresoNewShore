@@ -1,0 +1,39 @@
+2020-09-27T18:25:48.7236019-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-27T18:25:48.7365994-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-27T18:25:48.7389349-05:00  [INF] Content root path: "D:\Documents\PruebaNewShore\PruebaIngresoNewShore" (b5d60022)
+2020-09-27T18:25:49.9842871-05:00 80000010-0001-ff00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Flight"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-09-27T18:29:54.6395895-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-27T18:29:54.6498215-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-27T18:29:54.6517892-05:00  [INF] Content root path: "D:\Documents\PruebaNewShore\PruebaIngresoNewShore" (b5d60022)
+2020-09-27T18:29:55.3936398-05:00 8000001a-0005-ff00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Flight"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-09-27T18:30:10.6321285-05:00 8000001a-0004-fd00-b63f-84710c7967bb [ERR] Error al consultar los vuelos disponibles. (95c00e68)
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at PruebaIngresoNewShore.Service.ConsumeAPI.GetFlights(Dictionary`2 valuesAPI) in D:\Documents\PruebaNewShore\PruebaIngresoNewShore.Service\ConsumeAPI.cs:line 47
+   at PruebaIngresoNewShore.Controllers.HomeController.Index(SearchFlightModel model) in D:\Documents\PruebaNewShore\PruebaIngresoNewShore\Controllers\HomeController.cs:line 58
+2020-09-27T18:30:21.8081569-05:00 80000004-0000-fd00-b63f-84710c7967bb [ERR] Error al consultar los vuelos disponibles. (95c00e68)
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at PruebaIngresoNewShore.Service.ConsumeAPI.GetFlights(Dictionary`2 valuesAPI) in D:\Documents\PruebaNewShore\PruebaIngresoNewShore.Service\ConsumeAPI.cs:line 47
+   at PruebaIngresoNewShore.Controllers.HomeController.Index(SearchFlightModel model) in D:\Documents\PruebaNewShore\PruebaIngresoNewShore\Controllers\HomeController.cs:line 58
+2020-09-27T18:32:45.1237737-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-27T18:32:45.1374525-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-27T18:32:45.1401229-05:00  [INF] Content root path: "D:\Documents\PruebaNewShore\PruebaIngresoNewShore" (b5d60022)
+2020-09-27T18:32:46.1396199-05:00 8000001f-0000-ff00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Flight"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-09-27T18:33:00.2233635-05:00 8000001c-0005-ff00-b63f-84710c7967bb [ERR] Error al consultar los vuelos disponibles. (95c00e68)
+System.Net.WebException: The remote server returned an error: (500) Internal Server Error.
+   at System.Net.HttpWebRequest.GetResponse()
+   at PruebaIngresoNewShore.Service.ConsumeAPI.GetFlights(Dictionary`2 valuesAPI) in D:\Documents\PruebaNewShore\PruebaIngresoNewShore.Service\ConsumeAPI.cs:line 47
+   at PruebaIngresoNewShore.Controllers.HomeController.Index(SearchFlightModel model) in D:\Documents\PruebaNewShore\PruebaIngresoNewShore\Controllers\HomeController.cs:line 58
+2020-09-27T18:40:34.7417794-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-27T18:40:34.7523210-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-27T18:40:34.7541693-05:00  [INF] Content root path: "D:\Documents\PruebaNewShore\PruebaIngresoNewShore" (b5d60022)
+2020-09-27T18:40:35.5036442-05:00 8000001c-0004-fd00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Flight"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-09-27T18:43:16.7444207-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-27T18:43:16.7578173-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-27T18:43:16.7605134-05:00  [INF] Content root path: "D:\Documents\PruebaNewShore\PruebaIngresoNewShore" (b5d60022)
+2020-09-27T18:43:17.7161026-05:00 8000002a-0002-fd00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Flight"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-09-27T18:44:32.1141204-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-09-27T18:44:32.1275905-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-09-27T18:44:32.1298804-05:00  [INF] Content root path: "D:\Documents\PruebaNewShore\PruebaIngresoNewShore" (b5d60022)
+2020-09-27T18:44:33.0406939-05:00 8000001e-0004-fd00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Price"' on entity type '"Flight"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)

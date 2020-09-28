@@ -2,7 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>cb323aee-f444-40fe-98b3-90a6e198743d</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataAccess\**" />
+    <Compile Remove="ScriptsSQL\**" />
+    <Compile Remove="Service\**" />
+    <Compile Remove="Shared\**" />
+    <Content Remove="DataAccess\**" />
+    <Content Remove="ScriptsSQL\**" />
+    <Content Remove="Service\**" />
+    <Content Remove="Shared\**" />
+    <EmbeddedResource Remove="DataAccess\**" />
+    <EmbeddedResource Remove="ScriptsSQL\**" />
+    <EmbeddedResource Remove="Service\**" />
+    <EmbeddedResource Remove="Shared\**" />
+    <None Remove="DataAccess\**" />
+    <None Remove="ScriptsSQL\**" />
+    <None Remove="Service\**" />
+    <None Remove="Shared\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
@@ -13,14 +33,14 @@
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
   </ItemGroup>
 
-  <ItemGroup>    
-    <ProjectReference Include="DataAccess\PruebaIngresoNewShore.DataAccess.csproj" />
-    <ProjectReference Include="Service\PruebaIngresoNewShore.Service.csproj" />
-    <ProjectReference Include="Shared\PruebaIngresoNewShore.Shared.csproj" />
+  <ItemGroup>
+    <Folder Include="LogError\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="LogError\" />
+    <ProjectReference Include="DataAccess\PruebaIngresoNewShore.DataAccess.csproj" />
+    <ProjectReference Include="Service\PruebaIngresoNewShore.Service.csproj" />
+    <ProjectReference Include="Shared\PruebaIngresoNewShore.Shared.csproj" />
   </ItemGroup>
 
 </Project>
